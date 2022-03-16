@@ -1,0 +1,52 @@
+<h3>1. Element có TagName là duy nhất</h3>
+
+<p>Thông thường ít khi có trường hợp này xảy ra.</p>
+<p>Trừ khi bạn cần phân vùng được nhờ vào đối tượng cha, sau đó mới xác định thông qua tên thẻ.</p>
+<p>Đối với trường hợp phân vùng qua đối tượng cha, ta sẽ học ở ví dụ sau</p>
+
+<code> //nav </code>
+<nav class="btn btn-success">NavBar content</nav>
+
+<h3>2. Sử dụng ID</h3>
+<p>Theo quy ước thì ID luôn là duy nhất trong 1 tài liệu HTML. Về cơ bản khi sử dụng ID thì sẽ lấy được Element ngay</p>
+<p>Tuy nhiên, vãn sẽ có trường hợp đặc biệt khi vì một lý do nào đó, ông DEV ông vô tình hoặc cố ý làm cho ID trên tài liệu HTML bị trùng. Nên cần chú ý</p>
+
+<code>//button[@id='btnExample1']</code>
+<button class="btn btn-success" id="btnExample1">Button 1 - Có ID là duy nhất</button>
+<button class="btn btn-primary" id="btnExample2">Button 2 - Có ID là duy nhất</button>
+
+<button class="btn btn-primary" id="btnExample3">Button 3 - Có ID bị trùng</button>
+<button class="btn btn-primary" id="btnExample3">Button 4 - Có ID bị trùng</button>
+
+<h3>3. Sử dụng class</h3>
+<p>Dùng tới class của button khi button có 1 chứa class đặc biệt</p>
+<code>//button[@class='btn btn-primary btn5']</code>
+<button class="btn btn-primary btn5">Button 5</button>
+
+<p>Tuy nhiên ở trường hợp trên ta đang sử dụng dấu = là so sánh tuyệt đối, tức là bắt buộc class phải là <span class="mark">btn btn-primary btn5</span></p>
+<p>Khi bị thiếu một class hoặc thừa một class (ví dụ bị đổi thành <span class="mark">btn btn-success btn5</span>) thì ngay lập tức xpath bị sai ngay</p>
+<p>Mà class thì là cái rất dễ bị thay đổi, vì vậy nên hạn chế sài class hơn</p>
+<br />
+<p>Để khắc phục tình trạng dễ dàng thay đổi của class, ta có thể sài hàm <span class="mark">contains</span> để thay cho so sánh tuyệt đối bằng dấu =</p>
+<p>Vậy nên, từ nay về sau, <span class="attention">cứ khi nào sử dụng tới class là sẽ sử dụng hàm contains, tuyệt đối ko sử dụng dấu =</span></p>
+<code>//button[contains(@class , 'btn6')]</code>
+<button class="btn btn-primary btn6">Button 6</button>
+
+<p>Dùng tới name của button</p>
+<button class="btn btn-primary" name="btn5">Button 7</button>
+
+<p>Dùng tới Attribute của button</p>
+<button class="btn btn-primary" type="submit">Button 8</button>
+<p>Dùng tới Attribute của button</p>
+<p>//button[@disabled]</p>
+<button class="btn btn-primary" disabled>Button 9</button>
+
+<p>Trường hợp button không có gì đặc biệt, ta cần dùng tới text</p>
+<button class="btn btn-primary">Button 10</button>
+<button class="btn btn-primary">Button 11</button>
+
+<p>Trường hợp button không có gì đặc biệt, text cũng trùng nhau luôn</p>
+<p>Hoặc trong trường hợp text có thể khác nhau, nhưng ta lại không thể biết trước được text là gì</p>
+<p>Ta lúc này chỉ còn cách sử dụng tới Index</p>
+<button class="btn btn-primary">Button 12</button>
+<button class="btn btn-primary">Button 12</button>

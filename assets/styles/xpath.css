@@ -1,0 +1,39 @@
+#container {
+  padding: 8px;
+}
+
+.btn {
+  display: block;
+  margin-top: 8px;
+}
+
+h3 {
+  margin-top: 8px;
+  font-size: 1.2rem;
+}
+
+p {
+  margin-bottom: 0rem;
+  font-size: 1rem;
+}
+
+code {
+  font-size: 87.5%;
+  color: #515151;
+  word-break: break-word;
+  border: 1px solid #d0cccc;
+  display: block;
+  border-radius: 2px;
+  padding: 4px;
+  background: #e2e2e2;
+  margin: 4px 0;
+}
+
+.mark {
+  font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 0.8rem;
+}
+
+.attention {
+  color: rgb(203 0 0);
+}
