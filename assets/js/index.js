@@ -15,10 +15,40 @@ const values = [
   },
   {
     name: "Bài 3. Tìm hiểu về TestNG",
-    youtubeLink: null,
+    youtubeLink: "https://www.youtube.com/watch?v=vgO9EUfhTN4",
     demoLink: null,
-    background: null,
+    background: "./assets/img/b3.png",
     description: "No action",
+  },
+  {
+    name: "Bài 4. Tìm hiểu cấu trúc của 1 trang web",
+    youtubeLink: "https://www.youtube.com/watch?v=pKCfSg8G0UY",
+    demoLink: null,
+    background: "./assets/img/b4.png",
+    description: "Bài dành cho các bạn chưa biết HTML là gì",
+  },
+  {
+    name: "Bài 5. Selenium - Lý thuyết",
+    youtubeLink: "https://www.youtube.com/watch?v=zvxfVqek7e4",
+    demoLink: null,
+    background: "./assets/img/b5.png",
+    description: "Các thành phần của Selenium, cách thức hoạt động",
+  },
+
+  {
+    name: "Bài 6. Selenium - Thực hành",
+    youtubeLink: "https://www.youtube.com/watch?v=IqqcIBPjFGU",
+    demoLink: null,
+    background: "./assets/img/b6.png",
+    description: "Thực hành cơ bản về Selenium",
+  },
+
+  {
+    name: "Bài 7. Tìm hiểu về WebElement",
+    youtubeLink: null,
+    demoLink: "./lessons/lession7/index.html",
+    background: "./assets/img/b7.png",
+    description: "Tìm hiểu WebElement và các API của nó",
   },
   {
     name: "Bài ?. Tìm hiểu về Xpath",

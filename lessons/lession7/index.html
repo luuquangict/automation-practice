@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+    <title>Bài 7. Tìm hiểu về WebElement</title>
+    <style>
+      .container {
+        background-color: #f3f3f3;
+      }
+
+      .dropdown-item {
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container pt-4 pb-4">
+      <h3>Button</h3>
+      <div class="alert alert-primary" role="alert" id="lbStatusButton">A simple primary alert—check it out!</div>
+
+      <button class="btn btn-success" onclick="handleClick('Button 1')" id="btnExample1">Button 1</button>
+      <button class="btn btn-success" onclick="handleClick('Button 2')">Button 2</button>
+      <button class="btn btn-danger" onclick="handleClick('Button 3')">Button 3</button>
+
+      <hr />
+
+      <h3>Input</h3>
+      <div class="form-group">
+        <label for="txtInput1">Text input</label>
+        <input type="text" class="form-control" id="txtInput1" value="Default value of input" />
+      </div>
+      <div class="form-group">
+        <label for="txtInput2">Text input disabled</label>
+        <input type="text" class="form-control" id="txtInput2" disabled value="Default value of input disabled" />
+      </div>
+
+      <div class="form-group">
+        <label for="txtInput3">Number input</label>
+        <input type="number" class="form-control" id="txtInput3" value="1500" />
+      </div>
+      <hr />
+
+      <h3>Select</h3>
+      <div class="alert alert-primary" role="alert" id="lbStatusSelect">A simple primary alert—check it out!</div>
+      <select onchange="selectChange()" class="form-control" id="exampleSelect1">
+        <option value="value1">Option 1</option>
+        <option value="value2">Option 2</option>
+        <option value="value3">Option 3</option>
+        <option value="value4">Option 4</option>
+        <option value="value5">Option 5</option>
+      </select>
+
+      <hr />
+      <h3>Checkbox</h3>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" />
+        <label class="form-check-label" for="defaultCheck1"> Default checkbox 1</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="defaultCheck2" />
+        <label class="form-check-label" for="defaultCheck2"> Default checkbox 2</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="defaultCheck3" />
+        <label class="form-check-label" for="defaultCheck3"> Default checkbox 3</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="defaultCheck4" />
+        <label class="form-check-label" for="defaultCheck4"> Default checkbox 4</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="defaultCheck5" />
+        <label class="form-check-label" for="defaultCheck5"> Default checkbox 5</label>
+      </div>
+
+      <hr />
+      <h3>Radio Button</h3>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked />
+        <label class="form-check-label" for="exampleRadios1"> Nam</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2" checked />
+        <label class="form-check-label" for="exampleRadios2"> Nữ</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3" checked />
+        <label class="form-check-label" for="exampleRadios3"> Buê đuê</label>
+      </div>
+
+      <hr />
+      <!-- Example single danger button -->
+      <h3>Dropdown</h3>
+      <div class="dropdown">
+        <a class="btn btn-success dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-expanded="false"> Dropdown link </a>
+
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+          <span class="dropdown-item" href="#" onclick="dropdownChange('Action 1')">Action 1</span>
+          <span class="dropdown-item" href="#" onclick="dropdownChange('Action 2')">Action 2</span>
+          <span class="dropdown-item" href="#" onclick="dropdownChange('Action 3')">Action 3</span>
+        </div>
+      </div>
+
+      <hr />
+      <h3>Form</h3>
+      <form>
+        <div class="form-group">
+          <label for="txtUsername">Username</label>
+          <input type="text" class="form-control" id="txtUserName" />
+        </div>
+        <div class="form-group">
+          <label for="txtPassword">Password</label>
+          <input type="password" class="form-control" id="txtPassword" />
+        </div>
+        <div class="form-group form-check">
+          <input type="checkbox" class="form-check-input" id="chkCheckMeOut" />
+          <label class="form-check-label" for="chkCheckMeOut">Check me out</label>
+        </div>
+        <button type="button" onclick="formSubmit()" class="btn btn-primary">Submit</button>
+        <div class="alert alert-primary mt-4" role="alert" id="lbStatusForm">A simple primary alert—check it out!</div>
+      </form>
+    </div>
+
+    <script>
+      function handleClick(name) {
+        document.getElementById("lbStatusButton").innerText = `Bạn vừa click vào ${name}`;
+      }
+
+      function selectChange() {
+        var value = document.getElementById("exampleSelect1").value;
+        document.getElementById("lbStatusSelect").innerText = `Bạn vừa chọn ${value}`;
+      }
+
+      function formSubmit() {
+        var txtUserName = document.getElementById("txtUserName").value;
+        var txtPassword = document.getElementById("txtPassword").value;
+        var chkCheckMeOut = document.getElementById("chkCheckMeOut").checked;
+        document.getElementById("lbStatusForm").innerText = `Giá trị bạn vừa nhập là: ${txtUserName}/${txtPassword}/${chkCheckMeOut}`;
+      }
+
+      function dropdownChange(value) {
+        document.getElementById("dropdownMenuLink").innerText = value;
+      }
+    </script>
+  </body>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</html>
