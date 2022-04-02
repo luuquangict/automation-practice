@@ -80,15 +80,15 @@
       <h3>Radio Button</h3>
       <div class="form-check">
         <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked />
-        <label class="form-check-label" for="exampleRadios1"> Nam</label>
+        <label class="form-check-label" for="exampleRadios1"> Male</label>
       </div>
       <div class="form-check">
         <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2" checked />
-        <label class="form-check-label" for="exampleRadios2"> Nữ</label>
+        <label class="form-check-label" for="exampleRadios2"> Female</label>
       </div>
       <div class="form-check">
         <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3" checked />
-        <label class="form-check-label" for="exampleRadios3"> Buê đuê</label>
+        <label class="form-check-label" for="exampleRadios3"> Gay</label>
       </div>
 
       <hr />
@@ -126,19 +126,19 @@
 
     <script>
       function handleClick(name) {
-        document.getElementById("lbStatusButton").innerText = `Bạn vừa click vào ${name}`;
+        document.getElementById("lbStatusButton").innerText = `Click on ${name}`;
       }
 
       function selectChange() {
         var value = document.getElementById("exampleSelect1").value;
-        document.getElementById("lbStatusSelect").innerText = `Bạn vừa chọn ${value}`;
+        document.getElementById("lbStatusSelect").innerText = `Selected: ${value}`;
       }
 
       function formSubmit() {
         var txtUserName = document.getElementById("txtUserName").value;
         var txtPassword = document.getElementById("txtPassword").value;
         var chkCheckMeOut = document.getElementById("chkCheckMeOut").checked;
-        document.getElementById("lbStatusForm").innerText = `Giá trị bạn vừa nhập là: ${txtUserName}/${txtPassword}/${chkCheckMeOut}`;
+        document.getElementById("lbStatusForm").innerText = `Value: ${txtUserName}/${txtPassword}/${chkCheckMeOut}`;
       }
 
       function dropdownChange(value) {
